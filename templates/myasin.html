@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1 id="myasin">ASINを入力して下さい</h1>
+    <br>
+    <form method="POST" action="/asin">
+        <div class="form-group">
+            <input type="text" name="asin" placeholder="ASIN"  class="form-control" style="width:300px;"/>
+        </div>
+        <button type="submit" class="btn btn-primary"/>送信</button>
+    </form>
+
+    <!-- all_review_listが空でないときの処理 -->
+    {% if all_review_list %}
+        <div class="container mt-5">
+        <div class="p-3 mb-2 bg-info text-white text-center">「{{asin}}」のレビュー結果</div>
+        {% for i in range(5) %}
+            {% for review in all_review_list[i] %}
+                {% if i == 0 %}
+                    <p>★☆☆☆☆：{{review}}</p>
+                {% endif %}
+                {% if i == 1 %}
+                    <p>★★☆☆☆：{{review}}</p>
+                {% endif %}
+                {% if i == 2 %}
+                    <p>★★★☆☆：{{review}}</p>
+                {% endif %}
+                {% if i == 3 %}
+                    <p>★★★★☆：{{review}}</p>
+                {% endif %}
+                {% if i == 4 %}
+                    <p>★★★★★：{{review}}</p>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock %}

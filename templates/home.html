@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    
+    <div class="jumbotron text-center">
+            <!-- display-4は文字の大きさ1:でかい～4:小さい -->
+            <h1 class="display-4">Welcom To MyFlaskApp</h1>
+            <p class="lead">このアプリケーションはAmazon.co.jpのレビューを評価の★毎に収集するアプリケーションです。<br>
+                            使い方は簡単で、ASIN（Amazon内でのバーコードの働きをするもの）を入力するだけ！
+            </p>
+            <a class="btn btn-primary btn-lg" href="/asin" role="button">さっそく使ってみる</a>
+    </div>
+
+{% endblock %}

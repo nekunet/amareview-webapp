@@ -1,0 +1,30 @@
+h1#test {
+    color: #6594e0;/*文字色*/
+    border-bottom: dashed 2px #6594e0;
+    /*線の種類:（点線）2px 線色:青っぽいもの*/
+}
+
+h1#myasin {
+    position: relative;
+    padding-left: 25px;
+}
+    
+h1#myasin:before {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    border-left: solid 15px transparent;
+    border-bottom: solid 15px rgb(119, 195, 223);
+}
+h1#myasin:after {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: 10px;
+    width: 100%;
+    border-bottom: solid 3px rgb(119, 195, 223);
+}
